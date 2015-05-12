@@ -56,6 +56,11 @@ public class StartActivity extends Activity {
 				intent3.putExtra("id",3);
 				startActivity(intent3);
 				break;
+			case 4:
+				Intent intent4=new Intent(StartActivity.this,MainActivity.class);
+				intent4.putExtra("id",4);
+				startActivity(intent4);
+				break;
 
 			default:
 				break;

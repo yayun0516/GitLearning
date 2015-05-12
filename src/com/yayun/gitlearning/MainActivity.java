@@ -43,6 +43,10 @@ public class MainActivity extends ActionBarActivity {
 			this.showwWebView.loadUrl("file:///android_asset/git_commit.html");
 			
 			break;
+		case 4:
+			this.showwWebView.loadUrl("file:///android_asset/git_time.html");
+			
+			break;
 
 		default:
 			break;

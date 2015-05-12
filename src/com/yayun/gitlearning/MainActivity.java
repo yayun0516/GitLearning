@@ -25,6 +25,7 @@ public class MainActivity extends ActionBarActivity {
 			break;
 		case 1:
 			this.showwWebView.loadUrl("file:///android_asset/git_install.html");
+			break;
 			
 		case 2:
 			this.showwWebView.loadUrl("file:///android_asset/git_repository.html");

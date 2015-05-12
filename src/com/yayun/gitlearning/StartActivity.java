@@ -2,30 +2,66 @@ package com.yayun.gitlearning;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class StartActivity extends Activity {
-	private String data[] = { "µÚÒ»ÕÂ£ºGit¼ò½é", "µÚ¶şÕÂ£ºGit°²×°", "µÚÈıÕÂ£º´úÂë²Ö¿âµÄ´´½¨", "µÚËÄÕÂ£ºÌá½»±¾µØ´úÂë", "µÚÎåÕÂ£º¸ü¶à¹¦ÄÜ",
-			"µÚÁùÕÂ£ºÉ¾³ıÎÄ¼ş", "µÚÆßÕÂ£ºÔ¶³Ì²Ö¿â", "µÚÒ»ÕÂ£º¼ò½é", "µÚÒ»ÕÂ£º¼ò½é", };
+	private String data[] = { "ç¬¬ä¸€ç« ï¼šGitç®€ä»‹", "ç¬¬äºŒç« ï¼šGitå®‰è£…", "ç¬¬ä¸‰ç« ï¼šä»£ç ä»“åº“çš„åˆ›å»º", "ç¬¬å››ç« ï¼šæäº¤æœ¬åœ°ä»£ç ", "ç¬¬äº”ç« ï¼šæ›´å¤šåŠŸèƒ½",
+			"ç¬¬å…­ç« ï¼šåˆ é™¤æ–‡ä»¶", "ç¬¬ä¸ƒç« ï¼šè¿œç¨‹ä»“åº“", "ç¬¬å…«ç« ï¼šå¾…ç»­",  };
 	private TextView titleTextView;
+	private long exitTime;
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {//ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¿½?
+		menu.add(Menu.NONE, Menu.FIRST + 1, 0, "exit").setIcon(null);
+		menu.add(Menu.NONE, Menu.FIRST + 2, 1, "about")
+				.setIcon(null);
+
+		return true;
+	}
 
 	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {//ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¿½?
+		switch (item.getItemId()) {
+		case Menu.FIRST + 1:
+			finish();
+			break;
+
+		default:
+			break;
+		}
+		return false;
+	}
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.startactivity);
 		this.titleTextView=(TextView)super.findViewById(R.id.title);
 		//this.titleTextView.setTextColor(Color.GREEN);
 		LinearLayout layout=(LinearLayout)super.findViewById(R.id.mulu);
+		GradientDrawable drawable = new GradientDrawable();  
+		drawable.setShape(GradientDrawable.RECTANGLE); // ç”»æ¡†   
+		drawable.setStroke(1, Color.WHITE); // è¾¹æ¡†ç²—ç»†åŠé¢œè‰²   
+		drawable.setColor(Color.GREEN ); // è¾¹æ¡†å†…éƒ¨é¢œè‰²   
+
 		for(int i=0;i<data.length;i++){
 			Button button=new Button(this);
 			button.setText(data[i]);
 			button.setId(i);
 			button.setOnClickListener(new OnClickListenerImpl());
+			//button.setBackgroundColor(Color.GREEN);
+			button.setTextColor(Color.WHITE);
+			button.setBackgroundDrawable(drawable); 
 			layout.addView(button);
 		}
 	}
@@ -75,8 +111,33 @@ public class StartActivity extends Activity {
 			}
 			
 		}
+		   
+
 		
-	
+	}	
+	public boolean onKeyDown(int keyCode, KeyEvent event)   
+    {  
+                 if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN)  
+                 {  
+                           
+                         if((System.currentTimeMillis()-exitTime) > 2000)  //System.currentTimeMillis()æ— è®ºä½•æ—¶è°ƒç”¨ï¼Œè‚¯å®šå¤§äº2000   
+                         {  
+                          Toast.makeText(getApplicationContext(), "å†æŒ‰ä¸€æ¬¡é€€å‡ºç¨‹åº",Toast.LENGTH_SHORT).show();                                  
+                          exitTime = System.currentTimeMillis();  
+                         }  
+                         else  
+                         {  
+                             finish();  
+                             System.exit(0);  
+                         }  
+                                   
+                         return true;  
+                 }  
+                 return super.onKeyDown(keyCode, event);  
+    }  
+ 
 
 }
-}
+
+
+

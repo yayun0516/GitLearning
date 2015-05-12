@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:text="Git  教程" 
         android:textSize="25dp"
+        android:textColor="#00CC00"
         android:gravity="center"/>
 
     <ScrollView

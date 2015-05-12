@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+<title></title>
+<meta name="keywords" content="webview Android" /> 
+<style type="text/css">
+img{
+ max-width:100%;
+ height:auto;
+}
+body{
+
+
+}
+
+p{text-indent:2em
+}
+
+</style>
+</head>
+<body style="color:green">
+<p style="font-family:verdana;font-size:80%;color:green">
+
+
+
+<p>上一章我们已经学会了如何创建代码仓库，下面我们研究一下如何提交本地代码。</p>
+<p>其实代码提交的方法也是非常简单滴，只需要add和commit命令就可以了。add相当于把想要提交的代码放入一个暂存区，commit将暂存区的文件提交到代码仓库，至于暂存区的概念我们以后再讨论，你可以把它理解成网购时的“支付宝”。</p>
+<p>比如我们想添加AndroidManifest.xml文件，就可以输入：</p>
+<p><font color ="black"> git add AndroidManifest.xml</font></p>
+<p>这是添加单个文件的方法，那如果我们想添加某个目录呢？比如想添加整个src目录下的所有文件，输入如下命令：</p>
+<p><font color ="black"> git add src</font></p>
+<p>这样一个个添加是不是有些”蛋疼“，你也可以一次性添加所有的文件，只需要在add后加一个点即可，如下：</p>
+<p><font color ="black"> git add .</font></p>
+<p>现在项目目录下的所有文件都已经添加好了，我们可以来提交一下了，输入如下命令：</p>
+<p><font color ="black"> git commit -m "First commit"</font></p>
+<p>此处commit命令后面我们一定要通过 -m参数来加上提交的描述信息（First commit），没有描述信息的提交被认为是不合法的。这样我们所有的代码都已经提交成功了！下图帮你形象的理解一下：</p>
+<img src="./pics/pic_6.png"/>
+
+
+
+</p>
+</body>
+</html>

@@ -1,18 +1,10 @@
 package com.yayun.gitlearning;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v7.app.ActionBarActivity;
 import android.webkit.WebView;
 import android.widget.TextView;
-import android.os.Build;
 
 public class MainActivity extends ActionBarActivity {
 	TextView textView=null;
@@ -45,7 +37,8 @@ public class MainActivity extends ActionBarActivity {
 			break;
 		case 4:
 			this.showwWebView.loadUrl("file:///android_asset/git_time.html");
-			
+		case 5:
+			this.showwWebView.loadUrl("file:///android_asset/git_remove.html");
 			break;
 
 		default:

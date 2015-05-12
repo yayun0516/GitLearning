@@ -37,8 +37,12 @@ public class MainActivity extends ActionBarActivity {
 			break;
 		case 4:
 			this.showwWebView.loadUrl("file:///android_asset/git_time.html");
+			break;
 		case 5:
 			this.showwWebView.loadUrl("file:///android_asset/git_remove.html");
+			break;
+		case 6:
+			this.showwWebView.loadUrl("file:///android_asset/git_remoterepository.html");
 			break;
 
 		default:

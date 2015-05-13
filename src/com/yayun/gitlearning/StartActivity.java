@@ -25,7 +25,7 @@ public class StartActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {//！！！！！！！！！！！！�?
 		menu.add(Menu.NONE, Menu.FIRST + 1, 0, "exit").setIcon(null);
-		menu.add(Menu.NONE, Menu.FIRST + 2, 1, "about")
+		menu.add(Menu.NONE, Menu.FIRST + 2, 1, "more")
 				.setIcon(null);
 
 		return true;
@@ -36,6 +36,10 @@ public class StartActivity extends Activity {
 		switch (item.getItemId()) {
 		case Menu.FIRST + 1:
 			finish();
+			break;
+		case Menu.FIRST + 2:
+			Intent intent=new Intent(StartActivity.this,Information.class);
+		    startActivity(intent);
 			break;
 
 		default:
@@ -52,7 +56,7 @@ public class StartActivity extends Activity {
 		GradientDrawable drawable = new GradientDrawable();  
 		drawable.setShape(GradientDrawable.RECTANGLE); // 画框   
 		drawable.setStroke(1, Color.WHITE); // 边框粗细及颜色   
-		drawable.setColor(Color.GREEN ); // 边框内部颜色   
+     	drawable.setColor(0xFF007500); // 边框内部颜色   
 
 		for(int i=0;i<data.length;i++){
 			Button button=new Button(this);

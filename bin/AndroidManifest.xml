@@ -23,7 +23,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Information">
+            
+        </activity>
+        <activity
             android:name=".MainActivity">
+            
+        </activity>
+        <activity
+            android:name=".SendMailActivity">
             
         </activity>
     </application>

@@ -1,12 +1,12 @@
 package com.yayun.gitlearning;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 	TextView textView=null;
 	WebView showwWebView=null;
 
@@ -44,6 +44,9 @@ public class MainActivity extends ActionBarActivity {
 			break;
 		case 6:
 			this.showwWebView.loadUrl("file:///android_asset/git_ remoterepository.html");
+			break;
+		case 7:
+			this.showwWebView.loadUrl("file:///android_asset/git_branch.html");
 			break;
 
 		default:
